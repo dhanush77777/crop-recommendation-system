@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="stylesheet" href="styes.css">
+  <style>
+    div{
+      padding:5px;
+      text-align:center;
+      font-size:50
+      
+      
+    }
+    body{
+      background-color:pink
+    }
+    h1{
+      color:red
+    }
+    input{
+      background-color:lightgreen;
+      font-size:20px;
+      border-radius:5px;
+      border-width:2px;
+      padding:12px
+    }
+    button{
+      background-color:lime;
+        font-size:20px;
+      border-radius:1px
+    }
+    h2{
+      color:blue
+  </style>
+  
+</head>
+
+<body>
+  
+ <div class="login">
+   <h2>
+     ML APP
+   </h2>
+   <h1><i>CROP RECOMMENDATION SYSTEM</i></h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    
+    	<form action="{{url_for('predict')}}"method="post">
+          <div>
+<input type="text" name="N" placeholder="enter nitrogen content" required="required" /><br>
+          </div>
+          <div>
+<input type="text" name="P" placeholder="enter phosphorus content" required="required" /><br>
+          </div>
+          <div>
+<input type="text" name="K" placeholder=" enter potassium content " required="required" /><br>
+          </div>
+          <div>
+<input type="text" name="temperature" placeholder="enter temperature" required="required" /><br>
+          </div>
+              <div>
+<input type="text" name="humidity" placeholder=" enter humidity" required="required" /><br>
+          </div>
+              <div>
+<input type="text" name="ph" placeholder=" enter PH level" required="required" /><br>
+          </div>
+            <div>
+<input type="text" name="rainfall" placeholder=" rainfall in mm" required="required" /><br>
+          </div>
+<footer>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+          </footer>
+  </form>
+
+   <br>
+   <br>
+   <h2>
+   {{ prediction_text }}
+   {{pre}}
+   </h2>
+
+
+</body>
+</html>
